@@ -31,16 +31,16 @@ const routes: Routes = [
   {path: 'usuario-novo/:id', component: UsuarioNovoComponent},
   {path: 'usuario-deletar/:id', component: UsuarioDeletarComponent},
   {path: 'user-page', component: UserPageComponent},
-  {path: 'perguntas', component:PerguntasComponent},
+  {path: 'perguntas', component: PerguntasComponent},
   {path: 'produto', component: ProdutoComponent},
   {path: 'produto-novo/:id', component: ProdutoNovoComponent},
   {path: 'produto-novo', component: ProdutoNovoComponent},
   {path: 'produto-single', component: ProdutoSingleComponent},
   {path: 'produto-single/:id', component: ProdutoSingleComponent},
   {path: 'resgate', component: ResgateComponent},
-  {path: 'senhanova', component: SenhanovaComponent}
+  {path: 'senhanova/:email', component: SenhanovaComponent}
 
-  
+
 ];
 
 @NgModule({

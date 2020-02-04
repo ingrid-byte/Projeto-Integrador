@@ -9,21 +9,22 @@ import { Usuario } from '../model/usuario';
   styleUrls: ['./resgate.component.css']
 })
 export class ResgateComponent implements OnInit {
-  usuario: Usuario = new Usuario(); 
-  constructor(private router: Router, private usuarioService:UsuarioService) { }
+  usuario: Usuario = new Usuario();
+  constructor(private router: Router, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
   }
 
-  submit(){
-    this.usuarioService.validaEmail(this.usuario.email).subscribe(async (resposta: any) =>{
-        if(await resposta){
-          this.router.navigate(['senhanova']);          
-  
+  submit() {
+    this.usuarioService.validaEmail(this.usuario.email).subscribe( (resposta: boolean) => {
+        if (resposta) {
+          this.router.navigate([`senhanova/${this.usuario.email}`]);
+
+        } else {
+          alert ( "Digite um email cadastrado" );
         }
      }, err => {
-       console.log(`Erro cod: ${err.status}`);
-       alert("Digite um email cadastrado")
+       console.error(`Erro cod: ${err.status}`);
      });
 
 
